@@ -8,6 +8,7 @@ The portfolio web app is designed using the Django framework in Python. It featu
 # Features:
 
 Home Page: A brief introduction and a link to view the projects.
+
 Projects Page: A list of projects with descriptions, images, and links. Users can filter projects based on categories like Web, Mobile, and Data Science.
 
 # Technologies Used:
