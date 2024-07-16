@@ -94,20 +94,42 @@ A dropdown filter form to select project categories.
 A list of projects with each project's title, description, image, and a link to view more details.
 
 # Development Environment
+Programming Language
 
-{Describe the tools that you used to develop the software}
+Python: Python is the primary programming language used for developing this portfolio web app. The Django web framework, which is written in Python, handles the backend logic, database interactions, and server management.
 
-{Describe the programming language that you used and any libraries.}
+Frameworks and Libraries
 
+Django: It is used to build the server-side of the web application. It manages URL routing, views, templates, and database interactions. The framework allows for quick development of robust web applications with less code.
+
+SQLite
+
+Description:SQLite is used as the database to store project information, such as titles, descriptions, images, and links. Django's ORM interacts with SQLite to perform database operations.
+
+HTML/CSS:
+
+Description: HTML is used to structure the content of the web pages, while CSS is used to style the pages and improve their visual appeal.
+
+Django Template Language (DTL):
+
+Description: DTL is used to create dynamic HTML pages. It allows embedding Python-like expressions within HTML to render data from the backend, such as displaying project details from the database.
+
+Development Tools
+Visual Studio Code (VS Code): VS Code is used as the primary code editor for writing Python, HTML, and CSS code. Its integrated terminal is used to run Django commands and manage the development server.
+
+Git
+Git is used for version control to keep track of changes made to the codebase. It allows for easy collaboration and backup of the project.
+
+Pip
+Pip is used to install Django and any other required Python libraries.
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+Here is a list of websites that are helpful for developing a Django-based portfolio web app:
+* [Django Documentation](https://docs.djangoproject.com/)
+* [W3Schools](https://www.w3schools.com/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Ensure that the web app is fully responsive and looks good on all devices, including smartphones, tablets, and desktops
+* Implement better form validation, especially for the project submission form (if users can add projects).
+* Improve the overall styling and aesthetics of the web app using advanced CSS techniques or a CSS framework like Bootstrap or Tailwind CSS.
