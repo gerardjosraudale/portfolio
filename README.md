@@ -44,7 +44,7 @@ Start the Django development server by running:
 4. Access the Web App:
 Open your web browser and go to http://127.0.0.1:8000/. This will take you to the Home page of the portfolio web app. From there, you can navigate to the Projects page to see the list of projects.
 
-**Purpose for Writing This Software**
+**Purpose for Writing This Software:**
 The primary purpose of writing this software is to create a platform to showcase my projects and achievements in a professional and interactive manner. This portfolio web app serves several key objectives:
 
 **Showcase Skills and Projects:**
@@ -67,11 +67,11 @@ The web app includes interactive elements that enhance user experience, such as 
 
 # Web Pages
 
-Home Page
+**Home Page**
 Description:
 The Home page is the introductory page of the portfolio web app. It provides a welcome message and a brief introduction to the developer. The page includes a call-to-action button that directs users to the Projects page.
 
-Key Elements:
+**Key Elements:**
 
 A heading that welcomes visitors to the portfolio.
 A paragraph with a brief introduction about the developer.
@@ -83,11 +83,11 @@ The Home page does not have dynamically generated content. It serves as a static
 Transition:
 When the user clicks on the "View My Projects" button, they are redirected to the Projects page.
 
-Projects Page
+**Projects Page**
 Description:
 The Projects page showcases various projects that the developer has worked on. It displays project details such as title, description, image, and a link to view more information about the project. Users can filter projects based on categories like Web, Mobile, and Data Science.
 
-Key Elements:
+**Key Elements:**
 
 A heading that introduces the Projects page.
 A dropdown filter form to select project categories.
