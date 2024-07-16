@@ -41,8 +41,25 @@ Start the Django development server by running:
  python manage.py runserver
 }
 ```
+4. Access the Web App:
+Open your web browser and go to http://127.0.0.1:8000/. This will take you to the Home page of the portfolio web app. From there, you can navigate to the Projects page to see the list of projects.
 
-{Describe your purpose for writing this software.}
+Purpose for Writing This Software
+The primary purpose of writing this software is to create a platform to showcase my projects and achievements in a professional and interactive manner. This portfolio web app serves several key objectives:
+
+Showcase Skills and Projects:
+Demonstrate the range and depth of my technical skills by presenting various projects I've worked on. Each project highlights different aspects of my abilities, from web development to data science.
+
+Learning and Growth:
+Building this web app allows me to practice and refine my web development skills, particularly in using the Django framework. It also provides an opportunity to learn about deploying and managing a web application.
+
+Professional Presence:
+A portfolio web app is a powerful tool for creating a professional online presence. It offers potential employers, collaborators, and clients an insight into my work and what I can bring to their projects.
+
+Interactive Experience:
+The web app includes interactive elements that enhance user experience, such as project filtering and dynamic content loading. These features demonstrate my ability to create engaging and user-friendly web applications.
+
+
 
 {Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running (starting the server and navigating through the web pages) and a walkthrough of the code.}
 
