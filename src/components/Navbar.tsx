@@ -5,7 +5,7 @@ import { useState } from "react";
 const SOCIALS = [
 { label: "GitHub", href: "https://github.com/gerardjosraudale" },
 { label: "LinkedIn", href: "https://www.linkedin.com/in/josue-raudales-6a3080173" },
-{ label: "Email", href: "mailto:you@example.com" },
+{ label: "Email", href: "g.josue.raudales@gmail.com" },
 ];
 
 export default function Navbar() {
