@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./globals.css";
 import type { ReactNode } from "react";
 // (Optional) If you want stronger typing for metadata:
 // import type { Metadata } from "next";
