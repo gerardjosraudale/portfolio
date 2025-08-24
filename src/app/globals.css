@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* remove: @import "tailwindcss";  (v4 only) */
-/* remove the entire @theme inline { ... } block (v4 only) */
-
 :root { color-scheme: light dark; }
 html { scroll-behavior: smooth; }
 
