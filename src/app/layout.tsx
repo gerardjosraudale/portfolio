@@ -7,11 +7,11 @@ import type { ReactNode } from "react";
 export const metadata = {
   title: "Josue Raudales — Software Engineer",
   description: "Full‑stack projects, AI experiments, and testing‑focused engineering.",
-  metadataBase: new URL("https://your-deployment-url.vercel.app"),
+  metadataBase: new URL("https://josueraudales.com"),
   openGraph: {
     title: "Josue Raudales — Software Engineer",
     description: "Projects, case studies, and contact.",
-    url: "https://your-deployment-url.vercel.app",
+    url: "https://josueraudales.com",
     siteName: "JR Portfolio",
     images: ["/og.png"],
     locale: "en_US",

@@ -1,6 +1,10 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
+// ...
+<ThemeToggle />
+
 
 const SOCIALS = [
 { label: "GitHub", href: "https://github.com/gerardjosraudale" },
