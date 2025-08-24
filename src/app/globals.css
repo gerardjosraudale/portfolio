@@ -1,15 +1,16 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* remove: @import "tailwindcss";  (v4 only) */
+/* remove the entire @theme inline { ... } block (v4 only) */
+
+:root { color-scheme: light dark; }
+html { scroll-behavior: smooth; }
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
