@@ -6,9 +6,9 @@ import type { ReactNode } from "react";
 
 export const metadata = {
   title: "Josue Raudales — Software Engineer",
-  description: "Full‑stack projects, AI experiments, and testing‑focused engineering.",
+  description: "Full-stack projects, AI experiments, and testing-focused engineering.",
   metadataBase: new URL("https://josueraudales.com"),
-  openGraph: { 
+  openGraph: {
     title: "Josue Raudales — Software Engineer",
     description: "Projects, case studies, and contact.",
     url: "https://josueraudales.com",
