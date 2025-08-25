@@ -37,7 +37,7 @@ export default function PortfolioHome() {
 Hi, I’m <span className="text-indigo-600 dark:text-indigo-400">Josue Raudales</span>.
 </h1>
 <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-Software Engineering student focused on full‑stack web, AI‑assisted dev, and delightful UX. I love cooking, fitness, and building tools that save people time and money.
+Aspiring software engineer with hands-on project experience in web apps, AI integrations, and real-time systems, seeking opportunities to contribute and grow.
 </p>
 <div className="mt-6 flex flex-wrap gap-3">
 <a href="#projects" className="rounded-2xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow hover:-translate-y-0.5 hover:shadow-md transition">
