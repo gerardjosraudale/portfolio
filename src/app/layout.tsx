@@ -8,7 +8,7 @@ export const metadata = {
   title: "Josue Raudales — Software Engineer",
   description: "Full‑stack projects, AI experiments, and testing‑focused engineering.",
   metadataBase: new URL("https://josueraudales.com"),
-  openGraph: {
+  openGraph: { 
     title: "Josue Raudales — Software Engineer",
     description: "Projects, case studies, and contact.",
     url: "https://josueraudales.com",
@@ -19,6 +19,7 @@ export const metadata = {
   },
   icons: { icon: "/favicon.ico" },
 };
+
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
