@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 
-function applyTheme(isDark: boolean) {
-  document.documentElement.classList.toggle("dark", isDark);
-  // Optional: background color to avoid flash
-  document.documentElement.style.backgroundColor = isDark ? "#0a0a0a" : "#fafafa";
+function apply(isDark: boolean) {
+  const root = document.documentElement;
+  root.classList.toggle("dark", isDark);
+  root.style.backgroundColor = isDark ? "#0a0a0a" : "#fafafa";
 }
 
 export default function ThemeToggle() {
@@ -12,25 +12,21 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-    const initial = stored ? stored === "dark" : prefersDark;
+    const prefers = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+    const initial = stored ? stored === "dark" : prefers;
     setIsDark(initial);
-    applyTheme(initial);
+    apply(initial);
   }, []);
 
   const toggle = () => {
     const next = !isDark;
     setIsDark(next);
-    applyTheme(next);
+    apply(next);
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
   return (
-    <button
-      onClick={toggle}
-      className="rounded-2xl border px-3 py-1 text-sm shadow-sm hover:shadow transition"
-      aria-label="Toggle dark mode"
-    >
+    <button onClick={toggle} className="rounded-2xl border px-3 py-1 text-sm shadow-sm hover:shadow transition">
       {isDark ? "Light" : "Dark"}
     </button>
   );
