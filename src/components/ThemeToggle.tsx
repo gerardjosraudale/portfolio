@@ -34,7 +34,7 @@ export default function ThemeToggle() {
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
-  // Animation definitions
+  // Animations for icon swap
   const fadeVariants = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { duration: 0.15 } },
@@ -51,13 +51,15 @@ export default function ThemeToggle() {
   const tooltip = isDark ? "Switch to light" : "Switch to dark";
 
   return (
-    <button
+    <motion.button
       onClick={toggle}
       aria-label="Toggle dark mode"
       aria-pressed={isDark ?? false}
       title={tooltip}
-      className={`
-        rounded-full p-2 shadow-sm transition 
+      // Press animation:
+      whileTap={reduceMotion ? undefined : { scale: 0.96 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className={`rounded-full p-2 shadow-sm transition
         focus:outline-none focus:ring-2 focus:ring-indigo-500/50
         ${isDark ? "bg-indigo-600 hover:bg-indigo-500 text-white" : "bg-zinc-200 hover:bg-zinc-300 text-zinc-800"}
       `}
@@ -77,6 +79,6 @@ export default function ThemeToggle() {
           </motion.div>
         )}
       </AnimatePresence>
-    </button>
+    </motion.button>
   );
 }
