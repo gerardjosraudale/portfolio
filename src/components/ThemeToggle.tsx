@@ -1,6 +1,8 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 function apply(isDark: boolean) {
   const root = document.documentElement;
@@ -9,6 +11,7 @@ function apply(isDark: boolean) {
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState<boolean | null>(null);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
@@ -29,19 +32,41 @@ export default function ThemeToggle() {
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
+  // Simple variants that respect reduced-motion
+  const variants = reduceMotion
+    ? {
+        initial: { opacity: 0 },
+        animate: { opacity: 1, transition: { duration: 0.15 } },
+        exit:    { opacity: 0, transition: { duration: 0.12 } },
+      }
+    : {
+        initial: { opacity: 0, rotate: -90, scale: 0.8 },
+        animate: { opacity: 1, rotate: 0,    scale: 1,   transition: { duration: 0.25, ease: "easeOut" } },
+        exit:    { opacity: 0, rotate: 90,    scale: 0.8, transition: { duration: 0.2,  ease: "easeIn"  } },
+      };
+
   return (
     <button
       onClick={toggle}
-      className="rounded-2xl border p-2 shadow-sm hover:shadow transition"
       aria-label="Toggle dark mode"
+      aria-pressed={isDark ?? false}
+      className="rounded-2xl border p-2 shadow-sm hover:shadow transition focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
     >
-      {isDark === null ? (
-        <span className="animate-pulse">…</span>
-      ) : isDark ? (
-        <Sun className="h-5 w-5 text-yellow-500" />
-      ) : (
-        <Moon className="h-5 w-5 text-indigo-500" />
-      )}
+      <AnimatePresence initial={false} mode="wait">
+        {isDark === null ? (
+          <motion.span key="loading" {...variants}>
+            <span className="inline-block w-5 h-5">…</span>
+          </motion.span>
+        ) : isDark ? (
+          <motion.span key="sun" {...variants}>
+            <Sun className="h-5 w-5 text-yellow-500" aria-hidden />
+          </motion.span>
+        ) : (
+          <motion.span key="moon" {...variants}>
+            <Moon className="h-5 w-5 text-indigo-500" aria-hidden />
+          </motion.span>
+        )}
+      </AnimatePresence>
     </button>
   );
 }
