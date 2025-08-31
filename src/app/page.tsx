@@ -38,14 +38,30 @@ export default function PortfolioHome() {
           <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
             Aspiring software engineer with hands-on project experience in web apps, AI integrations, and real-time systems, seeking opportunities to contribute and grow.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a href="#projects" className="rounded-2xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow hover:-translate-y-0.5 hover:shadow-md transition">
-              View Projects
-            </a>
-            <a href="/resume.pdf" className="rounded-2xl border px-5 py-3 text-sm font-semibold shadow-sm hover:shadow transition" target="_blank">
-              Download Resume
-            </a>
-          </div>
+         <div className="mt-6 flex flex-wrap gap-2 md:gap-3">
+  {/* View Projects */}
+  <a
+    href="#projects"
+    className="inline-flex items-center gap-2 rounded-full h-10 px-5 border transition
+               bg-indigo-600 hover:bg-indigo-500 text-white border-indigo-600
+               hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+  >
+    <span className="font-medium">View Projects</span>
+  </a>
+
+  {/* Download Resume */}
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full h-10 px-5 border transition
+               bg-zinc-200 hover:bg-zinc-300 text-zinc-800 border-zinc-300
+               dark:bg-indigo-600 dark:hover:bg-indigo-500 dark:text-white dark:border-indigo-500/70
+               hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+  >
+    <span className="font-medium">Download Resume</span>
+  </a>
+</div>
           <ul className="mt-6 flex flex-wrap gap-2 text-xs text-zinc-500 dark:text-zinc-400">
             <li className="rounded-full border px-3 py-1">React</li>
             <li className="rounded-full border px-3 py-1">Node.js</li>
