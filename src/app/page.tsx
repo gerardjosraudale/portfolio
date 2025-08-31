@@ -62,14 +62,19 @@ export default function PortfolioHome() {
     <span className="font-medium">Download Resume</span>
   </a>
 </div>
-          <ul className="mt-6 flex flex-wrap gap-2 text-xs text-zinc-500 dark:text-zinc-400">
-            <li className="rounded-full border px-3 py-1">React</li>
-            <li className="rounded-full border px-3 py-1">Node.js</li>
-            <li className="rounded-full border px-3 py-1">Firebase</li>
-            <li className="rounded-full border px-3 py-1">PostgreSQL</li>
-            <li className="rounded-full border px-3 py-1">CI/CD</li>
-            <li className="rounded-full border px-3 py-1">Testing</li>
-          </ul>
+          <ul className="mt-6 flex flex-wrap gap-2 text-xs">
+  {["React", "Node.js", "Firebase", "PostgreSQL", "CI/CD", "Testing"].map((skill) => (
+    <li
+      key={skill}
+      className="inline-flex items-center rounded-full h-7 px-3 border 
+                 bg-zinc-100 text-zinc-700 border-zinc-300
+                 dark:bg-zinc-800 dark:text-zinc-200 dark:border-zinc-700
+                 transition"
+    >
+      {skill}
+    </li>
+  ))}
+</ul>
         </div>
         <div className="relative">
           <div className="aspect-[4/3] w-full rounded-3xl border bg-gradient-to-br from-indigo-500/20 to-fuchsia-500/20 p-1 shadow-inner">
