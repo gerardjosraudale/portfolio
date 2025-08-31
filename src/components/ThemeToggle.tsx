@@ -56,35 +56,24 @@ export default function ThemeToggle() {
       aria-label="Toggle dark mode"
       aria-pressed={isDark ?? false}
       title={tooltip}
-      className="rounded-2xl border p-2 shadow-sm hover:shadow transition focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+      className={`
+        rounded-full p-2 shadow-sm transition 
+        focus:outline-none focus:ring-2 focus:ring-indigo-500/50
+        ${isDark ? "bg-indigo-600 hover:bg-indigo-500 text-white" : "bg-zinc-200 hover:bg-zinc-300 text-zinc-800"}
+      `}
     >
       <AnimatePresence initial={false} mode="wait">
         {isDark === null ? (
-          <motion.div
-            key="loading"
-            initial={v.initial}
-            animate={v.animate}
-            exit={v.exit}
-          >
+          <motion.div key="loading" initial={v.initial} animate={v.animate} exit={v.exit}>
             <span className="inline-block w-5 h-5">…</span>
           </motion.div>
         ) : isDark ? (
-          <motion.div
-            key="sun"
-            initial={v.initial}
-            animate={v.animate}
-            exit={v.exit}
-          >
-            <Sun className="h-5 w-5 text-yellow-500" aria-hidden />
+          <motion.div key="sun" initial={v.initial} animate={v.animate} exit={v.exit}>
+            <Sun className="h-5 w-5" aria-hidden />
           </motion.div>
         ) : (
-          <motion.div
-            key="moon"
-            initial={v.initial}
-            animate={v.animate}
-            exit={v.exit}
-          >
-            <Moon className="h-5 w-5 text-indigo-500" aria-hidden />
+          <motion.div key="moon" initial={v.initial} animate={v.animate} exit={v.exit}>
+            <Moon className="h-5 w-5" aria-hidden />
           </motion.div>
         )}
       </AnimatePresence>
