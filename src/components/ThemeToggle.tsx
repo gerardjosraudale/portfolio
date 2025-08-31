@@ -16,12 +16,7 @@ export default function ThemeToggle() {
     const stored = localStorage.getItem("theme");
     const prefers = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
     const domHasDark = document.documentElement.classList.contains("dark");
-    const initial = stored
-      ? stored === "dark"
-      : typeof prefers === "boolean"
-      ? prefers
-      : domHasDark;
-
+    const initial = stored ? stored === "dark" : (typeof prefers === "boolean" ? prefers : domHasDark);
     setIsDark(initial);
     apply(initial);
   }, []);
@@ -34,39 +29,44 @@ export default function ThemeToggle() {
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
-  // Animations for icon swap
+  // Icon swap animations
   const fadeVariants = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { duration: 0.15 } },
     exit: { opacity: 0, transition: { duration: 0.12 } },
   };
-
   const rotateVariants = {
     initial: { opacity: 0, rotate: -90, scale: 0.8 },
     animate: { opacity: 1, rotate: 0, scale: 1, transition: { duration: 0.25, ease: "easeOut" } },
     exit: { opacity: 0, rotate: 90, scale: 0.8, transition: { duration: 0.2, ease: "easeIn" } },
   };
-
   const v = reduceMotion ? fadeVariants : rotateVariants;
+
   const tooltip = isDark ? "Switch to light" : "Switch to dark";
 
   return (
     <motion.button
       onClick={toggle}
+      title={tooltip}
       aria-label="Toggle dark mode"
       aria-pressed={isDark ?? false}
-      title={tooltip}
-      // Micro animations
       whileTap={reduceMotion ? undefined : { scale: 0.94 }}
-      whileHover={reduceMotion ? undefined : { scale: 1.08 }}
+      whileHover={reduceMotion ? undefined : { scale: 1.06 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
-      className={`rounded-full p-2 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-indigo-500/50
-        ${
-          isDark
-            ? "bg-indigo-600 hover:bg-indigo-500 text-white hover:shadow-lg hover:shadow-indigo-400/40"
-            : "bg-zinc-200 hover:bg-zinc-300 text-zinc-800 hover:shadow-lg hover:shadow-zinc-400/40"
-        }
-      `}
+      className={[
+        // size & shape — circular icon button ~40px
+        "h-10 w-10 rounded-full",
+        // layout — center icon pixel-perfect
+        "inline-flex items-center justify-center",
+        // border & background per theme
+        isDark
+          ? "bg-indigo-600 hover:bg-indigo-500 text-white border border-indigo-500/70 hover:shadow-lg hover:shadow-indigo-400/40"
+          : "bg-zinc-200 hover:bg-zinc-300 text-zinc-800 border border-zinc-300 hover:shadow-lg hover:shadow-zinc-400/40",
+        // focus styles
+        "focus:outline-none focus:ring-2 focus:ring-indigo-500/50",
+        // smooth transitions
+        "transition"
+      ].join(" ")}
     >
       <AnimatePresence initial={false} mode="wait">
         {isDark === null ? (
