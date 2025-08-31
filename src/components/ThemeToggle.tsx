@@ -56,8 +56,9 @@ export default function ThemeToggle() {
       aria-label="Toggle dark mode"
       aria-pressed={isDark ?? false}
       title={tooltip}
-      // Press animation
-      whileTap={reduceMotion ? undefined : { scale: 0.96 }}
+      // Micro animations
+      whileTap={reduceMotion ? undefined : { scale: 0.94 }}
+      whileHover={reduceMotion ? undefined : { scale: 1.08 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
       className={`rounded-full p-2 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-indigo-500/50
         ${
