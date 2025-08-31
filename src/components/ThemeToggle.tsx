@@ -5,8 +5,7 @@ import { Sun, Moon } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 function apply(isDark: boolean) {
-  const root = document.documentElement;
-  root.classList.toggle("dark", isDark);
+  document.documentElement.classList.toggle("dark", isDark);
 }
 
 export default function ThemeToggle() {
@@ -17,9 +16,7 @@ export default function ThemeToggle() {
     const stored = localStorage.getItem("theme");
     const prefers = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
     const domHasDark = document.documentElement.classList.contains("dark");
-    const initial = stored
-      ? stored === "dark"
-      : (typeof prefers === "boolean" ? prefers : domHasDark);
+    const initial = stored ? stored === "dark" : (typeof prefers === "boolean" ? prefers : domHasDark);
     setIsDark(initial);
     apply(initial);
   }, []);
@@ -32,7 +29,6 @@ export default function ThemeToggle() {
     localStorage.setItem("theme", next ? "dark" : "light");
   };
 
-  // Simple variants that respect reduced-motion
   const variants = reduceMotion
     ? {
         initial: { opacity: 0 },
@@ -45,26 +41,29 @@ export default function ThemeToggle() {
         exit:    { opacity: 0, rotate: 90,    scale: 0.8, transition: { duration: 0.2,  ease: "easeIn"  } },
       };
 
+  const tooltip = isDark ? "Switch to light" : "Switch to dark";
+
   return (
     <button
       onClick={toggle}
       aria-label="Toggle dark mode"
       aria-pressed={isDark ?? false}
+      title={tooltip}
       className="rounded-2xl border p-2 shadow-sm hover:shadow transition focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
     >
       <AnimatePresence initial={false} mode="wait">
         {isDark === null ? (
-          <motion.span key="loading" {...variants}>
+          <motion.div key="loading" {...variants}>
             <span className="inline-block w-5 h-5">…</span>
-          </motion.span>
+          </motion.div>
         ) : isDark ? (
-          <motion.span key="sun" {...variants}>
+          <motion.div key="sun" {...variants}>
             <Sun className="h-5 w-5 text-yellow-500" aria-hidden />
-          </motion.span>
+          </motion.div>
         ) : (
-          <motion.span key="moon" {...variants}>
+          <motion.div key="moon" {...variants}>
             <Moon className="h-5 w-5 text-indigo-500" aria-hidden />
-          </motion.span>
+          </motion.div>
         )}
       </AnimatePresence>
     </button>
