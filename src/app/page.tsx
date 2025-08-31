@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import { PROJECTS } from "@/data/projects";
 import { CERTS } from "@/data/certs";
+import { Award } from "lucide-react";
 
 export default function PortfolioHome() {
   const [query, setQuery] = useState("");
@@ -130,14 +131,36 @@ export default function PortfolioHome() {
       {/* Certificates */}
       <section id="certs" className="mx-auto max-w-6xl px-4 py-12">
         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Certificates</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {CERTS.map((c) => (
-            <a key={c.name} href={c.link} target="_blank" className="rounded-2xl border p-4 text-sm shadow-sm hover:shadow transition">
-              <div className="font-medium">{c.name}</div>
-              <div className="text-zinc-500">{c.org} • {c.year}</div>
-            </a>
-          ))}
-        </div>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+  {CERTS.map((c) => (
+    <a
+      key={c.name}
+      href={c.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group inline-flex items-center gap-2 rounded-full h-12 px-4 border transition
+                 bg-zinc-100 text-zinc-800 border-zinc-300 hover:bg-zinc-200 hover:shadow-md
+                 dark:bg-zinc-800 dark:text-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-700
+                 focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+      title={`${c.name} — ${c.org}`}
+    >
+      <span
+        className="inline-flex items-center justify-center h-7 w-7 rounded-full
+                   bg-white text-zinc-700 border border-zinc-300
+                   dark:bg-zinc-900 dark:text-zinc-200 dark:border-zinc-700
+                   group-hover:scale-105 transition"
+        aria-hidden
+      >
+        <Award className="h-4 w-4" />
+      </span>
+      <span className="truncate">
+        <span className="font-medium">{c.name}</span>
+        <span className="text-zinc-500 dark:text-zinc-400"> • {c.org}</span>
+      </span>
+      <span className="ml-auto text-xs text-zinc-500 dark:text-zinc-400">{c.year}</span>
+    </a>
+  ))}
+</div>
       </section>
 
       {/* About */}
