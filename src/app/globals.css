@@ -2,16 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: light dark; }
 html { scroll-behavior: smooth; }
 
-/* Remove these if you keep Tailwind for colors:
-:root { --background: #ffffff; --foreground: #171717; }
-@media (prefers-color-scheme: dark) {
-  :root { --background: #0a0a0a; --foreground: #ededed; }
-}
-body { background: var(--background); color: var(--foreground); }
-*/
-
-/* keep any font-family if you want */
+/* Keep fonts if you want, but do NOT set background/color here */
 body { font-family: Arial, Helvetica, sans-serif; }
