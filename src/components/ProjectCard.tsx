@@ -2,6 +2,7 @@
 
 import { Github, ExternalLink } from "lucide-react";
 
+
 export default function ProjectCard({ p }: { p: any }) {
   return (
     <div

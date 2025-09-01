@@ -4,9 +4,11 @@ import { useMemo, useState } from "react";
 import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import { Section, SectionTitle } from "@/components/Section";
-import { PROJECTS } from "@/data/projects";
 import { CERTS } from "@/data/certs";
 import { Github, Linkedin, Mail, Award } from "lucide-react";
+import { PROJECTS, type Project } from "@/data/projects";
+
+// (no other changes needed for your filtering code)
 
 export default function PortfolioHome() {
   const [query, setQuery] = useState("");
@@ -83,7 +85,7 @@ export default function PortfolioHome() {
               </ul>
             </div>
 
-            {/* Featured panel */}
+            
             {/* Featured panel — unified with ProjectCard styling */}
 <div className="relative">
   <div className="rounded-3xl bg-gradient-to-br from-indigo-500/15 to-fuchsia-500/15 p-1">
