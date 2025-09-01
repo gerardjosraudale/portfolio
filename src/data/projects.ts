@@ -1,19 +1,19 @@
-// Types for your portfolio projects
+// Define the shape of a project
 export type Project = {
   title: string;
   desc: string;
   tags: string[];
-  repo?: string;     // GitHub URL
-  demo?: string;     // Live demo URL
-  image?: string;    // e.g. "/smart-budget.png" (optional)
-  featured?: boolean;
+  repo?: string;     // GitHub link (optional)
+  demo?: string;     // Live demo link (optional)
+  image?: string;    // Thumbnail image (optional)
+  featured?: boolean; // If it's the "Featured Project"
 };
 
+// Strongly typed list of projects
 export const PROJECTS: Project[] = [
   {
     title: "Smart Budget Cooking Assistant",
-    desc:
-      "Full-stack app that recommends budget-friendly meals and builds shopping lists.",
+    desc: "Full-stack app that recommends budget-friendly meals and builds shopping lists.",
     tags: ["React", "Node.js", "Firebase", "Tailwind"],
     repo: "https://github.com/gerardjosraudale/smart-budget-cooking",
     image: "/smart-budget.png",
@@ -21,10 +21,16 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Resume ↔ JD Matcher (AI)",
-    desc:
-      "NLP + embeddings to score fit, highlight gaps, and draft tailored bullets.",
+    desc: "NLP + embeddings to score fit, highlight gaps, and draft tailored bullets.",
     tags: ["FastAPI", "NLP", "Embeddings"],
-    repo: "https://github.com/gerardjosraudale", // replace with exact repo if you have it
+    repo: "https://github.com/gerardjosraudale", // replace with exact repo if available
   },
-  // Add more projects below…
+  {
+    title: "Portfolio Website",
+    desc: "Personal portfolio built with Next.js, Tailwind, and TypeScript — deployed on Vercel.",
+    tags: ["Next.js", "Tailwind", "TypeScript"],
+    repo: "https://github.com/gerardjosraudale/portfolio",
+    demo: "https://josueraudales.com",
+  },
+  // Add more projects here…
 ];
