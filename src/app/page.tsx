@@ -84,30 +84,54 @@ export default function PortfolioHome() {
             </div>
 
             {/* Featured panel */}
-            <div className="relative">
-              <div className="aspect-[4/3] w-full rounded-3xl border bg-gradient-to-br from-indigo-500/20 to-fuchsia-500/20 p-1 shadow-inner">
-                <div className="h-full w-full rounded-2xl bg-white p-6 dark:bg-zinc-900 space-y-2">
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400">Featured Project</p>
-                  <h3 className="text-2xl font-semibold">Smart Budget Cooking Assistant</h3>
-                  <p className="text-zinc-600 dark:text-zinc-300">
-                    Personalized, budget-aware meal planning with shopping lists and pantry integration.
-                  </p>
-                  <div className="pt-2 flex gap-3 text-sm">
-                    <a
-                      href="https://github.com/gerardjosraudale/smart-budget-cooking"
-                      className="underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Repo
-                    </a>
-                    <a href="#projects" className="underline">See Projects</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Section>
+            {/* Featured panel — unified with ProjectCard styling */}
+<div className="relative">
+  <div className="rounded-3xl bg-gradient-to-br from-indigo-500/15 to-fuchsia-500/15 p-1">
+    <div
+      className="rounded-2xl border p-6 shadow-sm transition
+                 hover:-translate-y-1 hover:shadow-lg
+                 bg-white dark:bg-zinc-900 dark:border-zinc-700"
+    >
+      <p className="text-sm text-zinc-500 dark:text-zinc-400">Featured Project</p>
+
+      <h3 className="mt-1 text-2xl font-semibold">
+        Smart Budget Cooking Assistant
+      </h3>
+
+      <p className="mt-2 text-zinc-600 dark:text-zinc-300">
+        Personalized, budget-aware meal planning with shopping lists and pantry integration.
+      </p>
+
+      {/* Optional: tech tags, same mini-pill style */}
+      <ul className="mt-4 flex flex-wrap gap-2 text-xs">
+        {["React", "Node.js", "Firebase"].map((tag) => (
+          <li
+            key={tag}
+            className="inline-flex items-center rounded-full h-6 px-2 border
+                       bg-zinc-100 text-zinc-700 border-zinc-300
+                       dark:bg-zinc-800 dark:text-zinc-200 dark:border-zinc-700
+                       transition"
+          >
+            {tag}
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-4 flex gap-3 text-sm">
+        <a
+          href="https://github.com/gerardjosraudale/smart-budget-cooking"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Repo
+        </a>
+        <a href="#projects" className="underline">See Projects</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         {/* Projects */}
         <Section id="projects">
