@@ -23,7 +23,7 @@ export const PROJECTS: Project[] = [
     title: "Resume ↔ JD Matcher (AI)",
     desc: "NLP + embeddings to score fit, highlight gaps, and draft tailored bullets.",
     tags: ["FastAPI", "NLP", "Embeddings"],
-    repo: "https://github.com/gerardjosraudale", // replace with exact repo if available
+    repo: "https://github.com/gerardjosraudale",
   },
   {
     title: "Portfolio Website",
