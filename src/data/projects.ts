@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
     title: "Smart Budget Cooking Assistant",
     desc: "Full-stack app that recommends budget-friendly meals and builds shopping lists.",
     tags: ["React", "Node.js", "Firebase", "Tailwind"],
-    repo: "https://github.com/gerardjosraudale/smart-budget-cooking",
+    repo: "https://github.com/gerardjosraudale/smart-budget-cooking-assistant",
     image: "/smart-budget.png",
     featured: true,
   },
@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     title: "Portfolio Website",
     desc: "Personal portfolio built with Next.js, Tailwind, and TypeScript — deployed on Vercel.",
     tags: ["Next.js", "Tailwind", "TypeScript"],
-    repo: "https://github.com/gerardjosraudale/portfolio",
+    repo: "https://github.com/gerardjosraudale/portfolio.git",
     demo: "https://josueraudales.com",
   },
   // Add more projects here…
