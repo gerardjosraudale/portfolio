@@ -120,7 +120,7 @@ export default function PortfolioHome() {
 
                   <div className="mt-4 flex gap-3 text-sm">
                     <a
-                      href="https://github.com/gerardjosraudale/smart-budget-cooking"
+                      href="https://github.com/gerardjosraudale/smart-budget-cooking-assistant"
                       className="underline"
                       target="_blank"
                       rel="noopener noreferrer"
