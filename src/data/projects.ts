@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
     desc: "Personal portfolio built with Next.js, Tailwind, and TypeScript — deployed on Vercel.",
     tags: ["Next.js", "Tailwind", "TypeScript"],
     repo: "https://github.com/gerardjosraudale/portfolio.git",
-    image: "/smart-budget.png",
+    image: "/Screenshot 2025-09-06 at 5.44.04 PM.png",
     demo: "https://josueraudales.com",
   },
  
