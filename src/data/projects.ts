@@ -24,6 +24,7 @@ export const PROJECTS: Project[] = [
     desc: "NLP + embeddings to score fit, highlight gaps, and draft tailored bullets.",
     tags: ["FastAPI", "NLP", "Embeddings"],
     repo: "https://github.com/gerardjosraudale/resume-jd-matcher",
+     image: "/JDMatcher",
   },
   {
     title: "Portfolio Website",
